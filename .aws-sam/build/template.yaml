@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'adityaLearningLambda
+
+  Sample SAM Template for adityaLearningLambda
+
+  '
+Globals:
+  Function:
+    Timeout: 20
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: HelloWorldFunction
+      Handler: helloworld.AppBeginner::hello
+      Runtime: java8
+      MemorySize: 512
+      Timeout: 9
+      Environment:
+        Variables:
+          restapiurl: testURL
+    Metadata:
+      SamResourceId: HelloWorldFunction
